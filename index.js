@@ -1,4 +1,4 @@
-class usuario{
+class Usuario{
     constructor (nombre, clave){
         this.nombre = nombre;
         this.clave = clave;
@@ -12,19 +12,19 @@ function registro(){
     alert("¡BIENVENIDO! Indique sus datos para registrarse");
 
     usuarioIngresado= prompt("Indique el usuario: ");
-    claveIngresado= prompt("Indique la clave: ");
+    claveIngresada= prompt("Indique la clave: ");
 
-    usuarios.push(new usuario(usuarioIngresado, claveIngresada));
+    usuarios.push(new Usuario(usuarioIngresado, claveIngresada));
     alert("Registro con exito");
-
+   
 } 
 
 function validacion(usuario, clave) {
     
-    if(usuario == usuarios){
+    if(usuario == usuarios[0].nombre){
         alert("Usuario correcto");
 
-        if(clave == usuario.clave){
+        if(clave == usuarios[0].clave){
             alert("Ingreso con exito");
             
         }else alert("Clave incorrecta");
@@ -33,41 +33,7 @@ function validacion(usuario, clave) {
 }
 
 registro();
-let usuarioIngresado= prompt("Ingrese el usuario: ");
-let claveIngresada= prompt("ingrese la clave: ");
+let usuarioIngresado2= prompt("Ingrese el usuario: ");
+let claveIngresada2= prompt("ingrese la clave: ");
 validacion(usuarioIngresado, claveIngresada);
 
-/* let usuario = null;
-let clave = null;
-
-function registro() {
-    alert("¡BIENVENIDO! Indique sus datos para registrarse");
-
-    this.usuario= prompt("Indique el usuario: ");
-    this.clave= prompt("Indique la clave: ");
-
-    alert("Registro con exito");
-}
-
-function login() {
-    
-}
-
-function validacion(usuario, clave) {
-    
-    if(usuario == this.usuario){
-        alert("Usuario correcto");
-
-        if(clave == this.clave){
-            alert("Ingreso con exito");
-            
-        }else alert("Clave incorrecta");
-    }else alert("Usuario no registrado");
-
-}
-
-
-registro();
-let usuarioIngresado= prompt("Ingrese el usuario: ");
-let claveIngresada= prompt("ingrese la clave: ");
-validacion(usuarioIngresado, claveIngresada); */
