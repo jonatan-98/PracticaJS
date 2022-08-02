@@ -4,14 +4,22 @@ class Usuario{
         this.clave = clave;
     }
 
-
 }
 
 const usuarios = [];
-function registro(){
-    alert("¡BIENVENIDO! Indique sus datos para registrarse");
+let opcion=0;
 
-    usuarioIngresado= prompt("Indique el usuario: ");
+function menu(){
+    
+}
+function registro(){
+    alert(`¡BIENVENIDO! Indique sus datos para 
+    registrarse`);
+
+    usuarioIngresado= prompt(`Indique el usuario: 
+     1.sasas 
+     2.sdsdds 
+     0.salir`);
     claveIngresada= prompt("Indique la clave: ");
 
     usuarios.push(new Usuario(usuarioIngresado, claveIngresada));
