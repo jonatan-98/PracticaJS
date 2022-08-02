@@ -43,5 +43,5 @@ function validacion(usuario, clave) {
 registro();
 let usuarioIngresado2= prompt("Ingrese el usuario: ");
 let claveIngresada2= prompt("ingrese la clave: ");
-validacion(usuarioIngresado, claveIngresada);
+validacion(usuarioIngresado2, claveIngresada2);
 
