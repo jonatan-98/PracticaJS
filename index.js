@@ -9,39 +9,57 @@ class Usuario{
 const usuarios = [];
 let opcion=0;
 
-function menu(){
+
+function registro(usuarioRegistrado, claveRegistrada){
     
-}
-function registro(){
-    alert(`¡BIENVENIDO! Indique sus datos para 
-    registrarse`);
-
-    usuarioIngresado= prompt(`Indique el usuario: 
-     1.sasas 
-     2.sdsdds 
-     0.salir`);
-    claveIngresada= prompt("Indique la clave: ");
-
-    usuarios.push(new Usuario(usuarioIngresado, claveIngresada));
+    usuarios.push(new Usuario(usuarioRegistrado, claveRegistrada));
     alert("Registro con exito");
-   
 } 
 
-function validacion(usuario, clave) {
+function validacion(usuario) {
+    for(let i of usuarios){
     
-    if(usuario == usuarios[0].nombre){
-        alert("Usuario correcto");
+        if(usuario == i.nombre){
+            alert("Usuario correcto");
 
-        if(clave == usuarios[0].clave){
-            alert("Ingreso con exito");
-            
-        }else alert("Clave incorrecta");
-    }else alert("Usuario no registrado");
-
+            let intentos=5;
+            do{
+                let clave = prompt("Ingrese la clave"); 
+                if(clave == i.clave){
+                    alert("Ingreso con exito");
+                    
+                }else { intentos--;
+                        alert(`Clave incorrecta
+                        Le quedan intentos`);
+                    }
+            }while(intentos != 0);
+        }
+    }
 }
 
-registro();
-let usuarioIngresado2= prompt("Ingrese el usuario: ");
-let claveIngresada2= prompt("ingrese la clave: ");
-validacion(usuarioIngresado2, claveIngresada2);
+do{
+    opcion = Number(prompt(`¡Bienvenido al sistema!
+    Seleccione una opcion:
+    1_Registrarse al sistema
+    2_Ingresar al sistema
+    9_Salir`));
+
+    switch(opcion){
+        case 1:
+                let usuarioIngresado = prompt("Ingrese el usuario");
+                let claveIngresada = prompt("Ingrese la clave");
+                registro(usuarioIngresado, claveIngresada);
+            break;
+
+        case 2:
+                let usuarioIngresado2 = prompt("Ingrese el usuario");
+                validacion(usuarioIngresado2);
+            break;
+
+        case 9: alert("¡Hasta luego!");
+            break;
+
+        default: alert("Opcion incorrecta");
+    }
+}while(opcion != 9);
 
