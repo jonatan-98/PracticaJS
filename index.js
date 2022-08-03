@@ -17,8 +17,9 @@ function registro(usuarioRegistrado, claveRegistrada){
 } 
 
 function validacion(usuario) {
+
     for(let i of usuarios){
-    
+        
         if(usuario == i.nombre){
             alert("Usuario correcto");
 
@@ -27,13 +28,15 @@ function validacion(usuario) {
                 let clave = prompt("Ingrese la clave"); 
                 if(clave == i.clave){
                     alert("Ingreso con exito");
-                    
+                    intentos = 0;
+
                 }else { intentos--;
-                        alert(`Clave incorrecta
-                        Le quedan intentos`);
+                        alert(`Clave incorrecta. Le quedan ${intentos} intentos`);
                     }
             }while(intentos != 0);
-        }
+
+        } 
+        
     }
 }
 
