@@ -1,4 +1,17 @@
-class Usuario{
+
+alert("Este sistema crea mensajes en esta pagina");
+
+let mensajes = Number(prompt("ingrese la cantidad de mensajes a publicar:"));
+let conteiner = document.createElement("p");
+
+for(let i=0; i<mensajes; i++){
+    let mensajeIngresado=prompt(`Escriba el mensaje numero ${i+1} a publicar:`);
+    conteiner.innerHTML += `<h2>${mensajeIngresado}</h2>`;
+    document.body.append(conteiner);
+}
+
+/*---------- PROYECTO PENDIENTE PARA EL PROXIMO TRABAJO ENTREGABLE--------- */
+/* class Usuario{
     constructor (nombre, clave){
         this.nombre = nombre;
         this.clave = clave;
@@ -66,3 +79,4 @@ do{
     }
 }while(opcion != 9);
 
+ */
