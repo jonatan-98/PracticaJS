@@ -1,82 +1,52 @@
-
-alert("Este sistema crea mensajes en esta pagina");
-
-let mensajes = Number(prompt("ingrese la cantidad de mensajes a publicar:"));
-let conteiner = document.createElement("p");
-
-for(let i=0; i<mensajes; i++){
-    let mensajeIngresado=prompt(`Escriba el mensaje numero ${i+1} a publicar:`);
-    conteiner.innerHTML += `<h2>${mensajeIngresado}</h2>`;
-    document.body.append(conteiner);
-}
-
-/*---------- PROYECTO PENDIENTE PARA EL PROXIMO TRABAJO ENTREGABLE--------- */
-/* class Usuario{
+class Usuario{
     constructor (nombre, clave){
         this.nombre = nombre;
         this.clave = clave;
     }
 
 }
-
+ /* --------declaro array de ususarios--------- */
 const usuarios = [];
-let opcion=0;
 
+ /* ---------capturo todos los input y botones del html----------- */
+let usuarioRegistro = document.getElementById("usuarioRegistro");
+let claveRegistro = document.getElementById("claveRegistro");
+let botonRegistro = document.getElementById("botonRegistro");
 
+let usuario = document.getElementById("usuario");
+let clave = document.getElementById("clave");
+let botonSesion = document.getElementById("botonSesion");
+
+ /* -----------agrego eventos a los botones----------- */
+botonRegistro.onclick = () => {registro(usuarioRegistro.value , claveRegistro.value)}
+
+botonSesion.onclick = () => {validacion(usuario.value, clave.value)}
+
+ /* ----------agrego los metodos de registro y validacion---------- */
 function registro(usuarioRegistrado, claveRegistrada){
     
     usuarios.push(new Usuario(usuarioRegistrado, claveRegistrada));
     alert("Registro con exito");
 } 
 
-function validacion(usuario) {
+function validacion(usuario, clave) {
 
-    for(let i of usuarios){
+    for(let i=0; i<usuarios.length; i++){
         
-        if(usuario == i.nombre){
+        if(usuario == usuarios[i].nombre){
             alert("Usuario correcto");
 
-            let intentos=5;
-            do{
-                let clave = prompt("Ingrese la clave"); 
-                if(clave == i.clave){
-                    alert("Ingreso con exito");
-                    intentos = 0;
+            if(clave == usuarios[i].clave){
+                alert("Ingreso con exito");
+                
+            }else {alert(`Clave incorrecta.`);}
+           
 
-                }else { intentos--;
-                        alert(`Clave incorrecta. Le quedan ${intentos} intentos`);
-                    }
-            }while(intentos != 0);
-
-        } 
+        }else {
+            if(usuarios.length == i+1){
+                alert(`Usuario incorrecto.`)
+            }
+            }
         
     }
 }
-
-do{
-    opcion = Number(prompt(`¡Bienvenido al sistema!
-    Seleccione una opcion:
-    1_Registrarse al sistema
-    2_Ingresar al sistema
-    9_Salir`));
-
-    switch(opcion){
-        case 1:
-                let usuarioIngresado = prompt("Ingrese el usuario");
-                let claveIngresada = prompt("Ingrese la clave");
-                registro(usuarioIngresado, claveIngresada);
-            break;
-
-        case 2:
-                let usuarioIngresado2 = prompt("Ingrese el usuario");
-                validacion(usuarioIngresado2);
-            break;
-
-        case 9: alert("¡Hasta luego!");
-            break;
-
-        default: alert("Opcion incorrecta");
-    }
-}while(opcion != 9);
-
- */

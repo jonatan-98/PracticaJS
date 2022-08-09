@@ -8,37 +8,39 @@
     <title>JS</title>
 </head>
 <body>
-    <!-- ---------- PROYECTO PENDIENTE PARA EL PROXIMO TRABAJO ENTREGABLE---------  -->
-    <!-- <main>
-        <h2>Iniciar sesion</h2>
-        <div class="input-group">
-            <input required="" type="text" name="text" autocomplete="off" class="input">
-            <label class="user-label">Usuario</label>
-        </div>
-        <br>
-        <div class="input-group">
-            <input required="" type="password" name="text" autocomplete="off" class="input">
-            <label class="user-label">Clave</label>
-        </div>
-        <br>
-        <button> Button
-        </button>
-        <br>
-        <br>
-        <h2>Registrate</h2>
-        <div class="input-group">
-            <input required="" type="text" name="text" autocomplete="off" class="input">
-            <label class="user-label">Usuarion</label>
-        </div>
-        <br>
-        <div class="input-group">
-            <input required="" type="password" name="text" autocomplete="off" class="input">
-            <label class="user-label">Clave</label>
-        </div>
-        <br>
-        <button> Button
-        </button>
-    </main> -->
+    <main>
+        <section>
+            <h2>Iniciar Sesion</h2>
+
+                <div class="input-group">
+                    <input id="usuario" required="" type="text" name="usuario" autocomplete="off" class="input">
+                    <label class="user-label" for="usuario">Usuario</label>
+                </div>
+
+                <div class="input-group">
+                    <input id="clave" required="" type="password" name="clave" autocomplete="off" class="input">
+                    <label class="user-label" for="clave">Clave</label>
+                </div>
+
+                <button id="botonSesion">Iniciar Sesion</button>
+        </section>
+        <section>
+            <h2>Crea una cuenta</h2>
+
+            <div class="input-group">
+                <input id="usuarioRegistro" required="" type="text" name="nombre" autocomplete="off" class="input">
+                <label class="user-label" for="nombre">Usuario</label>
+            </div>
+
+            <div class="input-group">
+                <input id="claveRegistro" required="" type="password" name="clave" autocomplete="off" class="input">
+                <label class="user-label" for="clave">Clave</label>
+            </div>
+        
+            <button id="botonRegistro">Registrarse</button>
+        </section>
+        
+    </main>
     <script src="./js/index.js"></script>
 </body>
 </html>
