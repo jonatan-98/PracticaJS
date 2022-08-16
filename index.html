@@ -5,41 +5,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>JS</title>
+    <script src="https://kit.fontawesome.com/869dc8f5ef.js" crossorigin="anonymous"></script>
+    <title>login</title>
 </head>
 <body>
     <main>
-        <section>
-            <h2>Iniciar Sesion</h2>
+        <container class="container" id="container">
 
-                <div class="input-group">
-                    <input id="usuario" required="" type="text" name="usuario" autocomplete="off" class="input">
-                    <label class="user-label" for="usuario">Usuario</label>
+            <section class="form-container sign-up-container">
+                <form action="#">
+                    <h1>Crea tu cuenta</h1>
+                    <div class="social-container">
+                        <a href="https://www.facebook.com" class="social">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.google.com" class="social">
+                            <i class="fab fa-brands fa-google"></i>
+                        </a>
+                        <a href="https://www.github.com" class="social">
+                            <i class="fab fa-brands fa-github"></i>
+                        </a> 
+                    </div>
+                    <span>o usa tu email como registro</span>
+                    <div class="input-group">
+                        <input id="usuarioRegistro" required type="text" name="nombre" autocomplete="off" class="input">
+                        <label class="user-label" for="nombre">Nombre</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input id="usuarioRegistro" required type="email" name="mail" autocomplete="off" class="input">
+                        <label class="user-label" for="mail">Email</label>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input id="claveRegistro" required type="password" name="clave" autocomplete="off" class="input">
+                        <label class="user-label" for="clave">Password</label>
+                    </div>
+                    
+                    <button id="botonRegistro">Registrarse</button>
+                </form>
+            </section>
+            <section class="form-container sign-in-container">
+                <form action="#">
+                    <h1>Iniciar Sesion</h1>
+                    <div class="social-container">
+                        <a href="https://www.facebook.com" class="social">
+                        <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.google.com" class="social">
+                            <i class="fab fa-brands fa-google"></i>
+                        </a>
+                        <a href="https://www.github.com" class="social">
+                            <i class="fab fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <span>o usa tu email</span>
+                    <div class="input-group">
+                        <input id="usuario" required="" type="email" name="email" autocomplete="off" class="input">
+                        <label class="user-label" for="email">Email</label>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input id="clave" required="" type="password" name="clave" autocomplete="off" class="input">
+                        <label class="user-label" for="clave">Password</label>
+                    </div>
+                    
+                    <button id="botonSesion">Iniciar Sesion</button>
+                </form>
+            </section>
+            <div class="overlay-container">
+                <div class="overlay">
+                  <div class="overlay-panel overlay-left">
+                    <h1>¡Bienvenido!</h1>
+                    <p>
+                      Inicia sesión con tu cuenta
+                    </p>
+                    <button class="ghost" id="signIn">Inicia sesión</button>
+                  </div>
+                  <div class="overlay-panel overlay-right">
+                    <h1>¡Hola!</h1>
+                    <p>Crear tu cuenta</p>
+                    <button class="ghost" id="signUp">Registrar</button>
+                  </div>
                 </div>
-
-                <div class="input-group">
-                    <input id="clave" required="" type="password" name="clave" autocomplete="off" class="input">
-                    <label class="user-label" for="clave">Clave</label>
-                </div>
-
-                <button id="botonSesion">Iniciar Sesion</button>
-        </section>
-        <section>
-            <h2>Crea una cuenta</h2>
-
-            <div class="input-group">
-                <input id="usuarioRegistro" required="" type="text" name="nombre" autocomplete="off" class="input">
-                <label class="user-label" for="nombre">Usuario</label>
-            </div>
-
-            <div class="input-group">
-                <input id="claveRegistro" required="" type="password" name="clave" autocomplete="off" class="input">
-                <label class="user-label" for="clave">Clave</label>
-            </div>
-        
-            <button id="botonRegistro">Registrarse</button>
-        </section>
-        
+              </div>
+        </container>
+            
     </main>
     <script src="./js/index.js"></script>
 </body>
