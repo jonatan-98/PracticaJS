@@ -1,6 +1,7 @@
 class Usuario{
-    constructor (nombre, clave){
+    constructor (nombre, email, clave){
         this.nombre = nombre;
+        this.email = email;
         this.clave = clave;
     }
 
@@ -9,48 +10,80 @@ class Usuario{
 const usuarios = [];
 
  /* ---------capturo todos los input y botones del html----------- */
-let usuarioRegistro = document.getElementById("usuarioRegistro");
-let claveRegistro = document.getElementById("claveRegistro");
+let nameRegistro = document.getElementById("nameRegistro");
+let emailRegistro = document.getElementById("emailRegistro");
+let passwordRegistro = document.getElementById("passwordRegistro");
 let botonRegistro = document.getElementById("botonRegistro");
+let parrafo = document.getElementById("warnings");
+let form = document.getElementById("form");
 
-let usuario = document.getElementById("usuario");
-let clave = document.getElementById("clave");
+let email = document.getElementById("email");
+let password = document.getElementById("password");
 let botonSesion = document.getElementById("botonSesion");
+let parrafoSesion = document.getElementById("warningSesion");
+let formSesion = document.getElementById("formSesion");
 
- /* -----------agrego eventos a los botones----------- */
-botonRegistro.onclick = () => {registro(usuarioRegistro.value , claveRegistro.value)}
+/* -------------envento de registro de usuario------------ */
 
-botonSesion.onclick = () => {validacion(usuario.value, clave.value)}
+form.addEventListener("submit", e=>{
+    e.preventDefault();
+    let warnings = "";
+    let entrar = false;
+    parrafo.innerHTML = ""
+    if(nameRegistro.value.length <= 2){
+        warnings += `El nombre es muy corto <br>`;
+        entrar = true;
+    }
+    if(passwordRegistro.value.length < 6){
+        warnings += `La clave es muy corta`;
+        entrar = true;
+    }
+    if(entrar == true){
+        parrafo.innerHTML = warnings;
+    }
+    else{
+        
+        usuarios.push(new Usuario(nameRegistro.value, emailRegistro.value, passwordRegistro.value));
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        parrafo.innerHTML = "Registro con exito";
+    }
 
- /* ----------agrego los metodos de registro y validacion---------- */
-function registro(usuarioRegistrado, claveRegistrada){
-    
-    usuarios.push(new Usuario(usuarioRegistrado, claveRegistrada));
-    alert("Registro con exito");
-} 
+})
 
-function validacion(usuario, clave) {
+/*------------evento de inicio de sesion-------------*/
+
+formSesion.addEventListener("submit", e=>{
+    e.preventDefault();
+    let warnings = "";
+    let entrar = false;
+    parrafoSesion.innerHTML = ""
 
     for(let i=0; i<usuarios.length; i++){
         
-        if(usuario == usuarios[i].nombre){
-            alert("Usuario correcto");
-
-            if(clave == usuarios[i].clave){
-                alert("Ingreso con exito");
-                
-            }else {alert(`Clave incorrecta.`);}
+        if(email.value == usuarios[i].email){
+            
+            if(password.value == usuarios[i].clave){
+                parrafoSesion.innerHTML = "Ingreso con exito";
+            
+            }else {warnings += `Clave invalida`;
+                    entrar = true;
+                }
            
 
         }else {
             if(usuarios.length == i+1){
-                alert(`Usuario incorrecto.`)
+                warnings += `Correo invalido <br>`;
+                entrar = true;
             }
         }
         
     }
-}
-
+    if(entrar == true){
+        
+        parrafoSesion.innerHTML = warnings;
+    }
+})
+ /* ------------- animacion del login ------------------- */
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');

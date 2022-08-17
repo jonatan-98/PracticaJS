@@ -26,7 +26,6 @@ p {
   font-weight: 100;
   line-height: 20px;
   letter-spacing: 0.5px;
-  margin: 20px 0 30px;
 }
 
 span {
@@ -40,7 +39,7 @@ a {
   margin: 15px 0;
 }
 
-#red {
+.error {
   color: red;
 }
 
@@ -66,10 +65,6 @@ a {
   text-align: center;
 }
 
-.social-container {
-  margin: 20px 0;
-}
-
 .social-container a {
   border: 1px solid #ddd;
   border-radius: 50%;
@@ -80,27 +75,6 @@ a {
   height: 40px;
   width: 40px;
 }
-
-/* .form-container input {
-  background: #eee;
-  border: none;
-  padding: 12px 15px;
-  margin: 8px 0;
-  width: 100%;
-} */
-
-/* button {
-  border-radius: 20px;
-  border: 1px solid #ff4b2b;
-  background: #ff4b2b;
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 12px 45px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: transform 80ms ease-in;
-} */
 
 #lila {
   background: #be4bdb;
@@ -230,7 +204,7 @@ button.ghost {
     background: none;
     padding: 1rem;
     font-size: 1rem;
-    color: #f5f5f5;
+    color: black;
     transition: border 150ms cubic-bezier(0.4,0,0.2,1);
     margin: 10px;
    }

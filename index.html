@@ -13,9 +13,15 @@
         <container class="container" id="container">
 
             <section class="form-container sign-up-container">
-                <form action="#">
+
+                <!------ formuilario de registro ------>
+
+                <form action="#" id="form">
                     <h1>Crea tu cuenta</h1>
                     <div class="social-container">
+
+                        <!------ panel de redes sociales ------>
+
                         <a href="https://www.facebook.com" class="social">
                             <i class="fab fa-facebook-f"></i>
                         </a>
@@ -28,27 +34,34 @@
                     </div>
                     <span>o usa tu email como registro</span>
                     <div class="input-group">
-                        <input id="usuarioRegistro" required type="text" name="nombre" autocomplete="off" class="input">
-                        <label class="user-label" for="nombre">Nombre</label>
+                        <input id="nameRegistro" required type="text" name="name" class="input">
+                        <label class="user-label" for="name">Nombre</label>
                     </div>
 
                     <div class="input-group">
-                        <input id="usuarioRegistro" required type="email" name="mail" autocomplete="off" class="input">
+                        <input id="emailRegistro" required type="email" name="mail" class="input">
                         <label class="user-label" for="mail">Email</label>
                     </div>
                     
                     <div class="input-group">
-                        <input id="claveRegistro" required type="password" name="clave" autocomplete="off" class="input">
-                        <label class="user-label" for="clave">Password</label>
+                        <input id="passwordRegistro" required type="password" name="passsword" class="input">
+                        <label class="user-label" for="passsword">Password</label>
                     </div>
                     
-                    <button id="botonRegistro">Registrarse</button>
+                    <button type="submit" id="botonRegistro">Registrarse</button>
+                    <p class="error" id="warnings"></p>
                 </form>
             </section>
             <section class="form-container sign-in-container">
-                <form action="#">
+
+                <!---------- formulario de inicio de sesion ---------->
+
+                <form action="#" id="formSesion">
                     <h1>Iniciar Sesion</h1>
                     <div class="social-container">
+
+                        <!------ panel de redes sociales ------>
+
                         <a href="https://www.facebook.com" class="social">
                         <i class="fab fa-facebook-f"></i>
                         </a>
@@ -61,34 +74,38 @@
                     </div>
                     <span>o usa tu email</span>
                     <div class="input-group">
-                        <input id="usuario" required="" type="email" name="email" autocomplete="off" class="input">
+                        <input id="email" required type="email" name="email" class="input">
                         <label class="user-label" for="email">Email</label>
                     </div>
                     
                     <div class="input-group">
-                        <input id="clave" required="" type="password" name="clave" autocomplete="off" class="input">
+                        <input id="password" required type="password" name="clave" class="input">
                         <label class="user-label" for="clave">Password</label>
                     </div>
                     
                     <button id="botonSesion">Iniciar Sesion</button>
+                    <p id="warningSesion" class="error"></p>
                 </form>
             </section>
+
+            <!------- panel de animacion del login ------->
+
             <div class="overlay-container">
                 <div class="overlay">
-                  <div class="overlay-panel overlay-left">
-                    <h1>¡Bienvenido!</h1>
-                    <p>
-                      Inicia sesión con tu cuenta
-                    </p>
-                    <button class="ghost" id="signIn">Inicia sesión</button>
-                  </div>
-                  <div class="overlay-panel overlay-right">
-                    <h1>¡Hola!</h1>
-                    <p>Crear tu cuenta</p>
-                    <button class="ghost" id="signUp">Registrar</button>
-                  </div>
+                    <!------- panel de animacion de inicio de sesion ------->
+                    <div class="overlay-panel overlay-left">
+                        <h1>¡Bienvenido!</h1>
+                        <p>Inicia sesión con tu cuenta</p>
+                        <button class="ghost" id="signIn">Inicia sesión</button>
+                    </div>
+                    <!------- panel de animacion de registro ------->
+                    <div class="overlay-panel overlay-right">
+                        <h1>¡Hola!</h1>
+                        <p>Crear tu cuenta</p>
+                        <button class="ghost" id="signUp">Registrar</button>
+                    </div>
                 </div>
-              </div>
+            </div>
         </container>
             
     </main>
