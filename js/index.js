@@ -29,7 +29,8 @@ form.addEventListener("submit", e=>{
     e.preventDefault();
     let warnings = "";
     let entrar = false;
-    parrafo.innerHTML = ""
+    parrafo.innerHTML = "";
+    
     if(nameRegistro.value.length <= 2){
         warnings += `El nombre es muy corto <br>`;
         entrar = true;
@@ -38,15 +39,10 @@ form.addEventListener("submit", e=>{
         warnings += `La clave es muy corta`;
         entrar = true;
     }
-    if(entrar == true){
-        parrafo.innerHTML = warnings;
-    }
-    else{
-        
-        usuarios.push(new Usuario(nameRegistro.value, emailRegistro.value, passwordRegistro.value));
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
-        parrafo.innerHTML = "Registro con exito";
-    }
+
+    entrar == true ? parrafo.innerHTML = warnings : (usuarios.push(new Usuario(nameRegistro.value, emailRegistro.value, passwordRegistro.value)),
+    localStorage.setItem("usuarios", JSON.stringify(usuarios)),
+    parrafo.innerHTML = "Registro con exito");
 
 })
 
@@ -62,14 +58,9 @@ formSesion.addEventListener("submit", e=>{
         
         if(email.value == usuarios[i].email){
             
-            if(password.value == usuarios[i].clave){
-                parrafoSesion.innerHTML = "Ingreso con exito";
-            
-            }else {warnings += `Clave invalida`;
-                    entrar = true;
-                }
+            password.value == usuarios[i].clave ? parrafoSesion.innerHTML = "Ingreso con exito" : (warnings += `Clave invalida`,
+            entrar = true)
            
-
         }else {
             if(usuarios.length == i+1){
                 warnings += `Correo invalido <br>`;
