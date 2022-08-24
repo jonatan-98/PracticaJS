@@ -42,11 +42,12 @@ form.addEventListener("submit", e=>{
 
     entrar == true ? parrafo.innerHTML = warnings : (usuarios.push(new Usuario(nameRegistro.value, emailRegistro.value, passwordRegistro.value)),
     localStorage.setItem("usuarios", JSON.stringify(usuarios)),
-    parrafo.innerHTML = "Registro con exito");
+    modalRegistro())
 
 })
 
 /*------------evento de inicio de sesion-------------*/
+
 
 formSesion.addEventListener("submit", e=>{
     e.preventDefault();
@@ -58,7 +59,7 @@ formSesion.addEventListener("submit", e=>{
         
         if(email.value == usuarios[i].email){
             
-            password.value == usuarios[i].clave ? parrafoSesion.innerHTML = "Ingreso con exito" : (warnings += `Clave invalida`,
+            password.value == usuarios[i].clave ? modalSesion() : (warnings += `Clave invalida`,
             entrar = true)
            
         }else {
@@ -74,6 +75,23 @@ formSesion.addEventListener("submit", e=>{
         parrafoSesion.innerHTML = warnings;
     }
 })
+
+function modalSesion(){
+    Swal.fire({
+        title: 'Genial',
+        text: 'Ingresaste con exito',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
+}
+function modalRegistro(){
+    Swal.fire({
+        title: 'Genial',
+        text: 'Registro con exito',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
+}
  /* ------------- animacion del login ------------------- */
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');

@@ -9,7 +9,7 @@
     <title>login</title>
 </head>
 <body>
-    <main>
+    <main class="main">
         <container class="container" id="container">
 
             <section class="form-container sign-up-container">
@@ -32,7 +32,7 @@
                             <i class="fab fa-brands fa-github"></i>
                         </a> 
                     </div>
-                    <span>o usa tu email como registro</span>
+                    <span class="texto">o usa tu email como registro</span>
                     <div class="input-group">
                         <input id="nameRegistro" required type="text" name="name" class="input">
                         <label class="user-label" for="name">Nombre</label>
@@ -48,7 +48,7 @@
                         <label class="user-label" for="passsword">Password</label>
                     </div>
                     
-                    <button type="submit" id="botonRegistro">Registrarse</button>
+                    <button class="button" type="submit" id="botonRegistro">Registrarse</button>
                     <p class="error" id="warnings"></p>
                 </form>
             </section>
@@ -72,7 +72,7 @@
                             <i class="fab fa-brands fa-github"></i>
                         </a>
                     </div>
-                    <span>o usa tu email</span>
+                    <span class="texto">o usa tu email</span>
                     <div class="input-group">
                         <input id="email" required type="email" name="email" class="input">
                         <label class="user-label" for="email">Email</label>
@@ -83,7 +83,7 @@
                         <label class="user-label" for="clave">Password</label>
                     </div>
                     
-                    <button id="botonSesion">Iniciar Sesion</button>
+                    <button class="button" id="botonSesion">Iniciar Sesion</button>
                     <p id="warningSesion" class="error"></p>
                 </form>
             </section>
@@ -94,21 +94,22 @@
                 <div class="overlay">
                     <!------- panel de animacion de inicio de sesion ------->
                     <div class="overlay-panel overlay-left">
-                        <h1>¡Bienvenido!</h1>
-                        <p>Inicia sesión con tu cuenta</p>
-                        <button class="ghost" id="signIn">Inicia sesión</button>
+                        <h1 class="titulo">¡Bienvenido!</h1>
+                        <p class="parrafo">Inicia sesión con tu cuenta</p>
+                        <button class="ghost button" id="signIn">Inicia sesión</button>
                     </div>
                     <!------- panel de animacion de registro ------->
                     <div class="overlay-panel overlay-right">
-                        <h1>¡Hola!</h1>
-                        <p>Crear tu cuenta</p>
-                        <button class="ghost" id="signUp">Registrar</button>
+                        <h1 class="titulo">¡Hola!</h1>
+                        <p class="parrafo">Crear tu cuenta</p>
+                        <button class="ghost button" id="signUp">Registrar</button>
                     </div>
                 </div>
             </div>
         </container>
             
     </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>
